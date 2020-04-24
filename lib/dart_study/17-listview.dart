@@ -13,21 +13,31 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Image实例demo'),
         ),
-        body: ListView.builder(itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(Icons.favorite_border),
-            title: Text('$index 10号技师'),
-            subtitle: Text('棒棒的'),
-            trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              Scaffold.of(context).showSnackBar(SnackBar(
-                content: Text('datas'),
-                duration: Duration(milliseconds: 4000),
-                backgroundColor: Colors.red,
-              ));
-            },
-          );
-        }),
+        body: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              //  奇数返回下划线
+              if (index.isOdd) {
+                return Divider();
+              }
+              return ListTile(
+                leading: Icon(Icons.favorite_border),
+                title: Text('$index 10号技师'),
+                subtitle: Text('棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的棒棒的'),
+                //三行内容
+                isThreeLine: false,
+                //文字紧凑
+                dense: true,
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                    content: Text('$index'),
+                    duration: Duration(milliseconds: 4000),
+                    backgroundColor: Colors.red,
+                  ));
+                },
+              );
+            }),
 //        body: _buildListView1(),
         //  body: _buildListView(),
       ),
