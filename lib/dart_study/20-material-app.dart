@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -34,9 +32,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MaterialApp示例'),
+        title: Text(
+          'MaterialApp示例',
+          style: TextStyle(fontSize: 30),
+        ),
+        centerTitle: true,
+        leading: Icon(Icons.star),
+        actions: <Widget>[
+          Icon(Icons.search),
+          Icon(Icons.more_vert),
+        ],
       ),
-      body: _widgetOptions.elementAt(_currentIndex),
+      body: Center(child: _widgetOptions.elementAt(_currentIndex)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushNamed(context, '/other');
@@ -76,6 +83,60 @@ class _HomePageState extends State<HomePage> {
             _currentIndex = index;
           });
         },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://randomuser.me/api/portraits/women/60.jpg'),
+              ),
+              accountName: Text('Damon'),
+              accountEmail: Text('114650501@qq.com'),
+              otherAccountsPictures: <Widget>[Icon(Icons.camera_alt)],
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('images/icon_111.jpg'), fit: BoxFit.fill),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                'ListTitle',
+              ),
+              leading: Icon(Icons.favorite_border),
+            ),
+            Divider(),
+            ListTile(
+              title: Text(
+                'ListTitle',
+              ),
+              leading: Icon(Icons.favorite_border),
+            ),
+            Divider(),
+            ListTile(
+              title: Text(
+                'ListTitle',
+              ),
+              leading: Icon(Icons.favorite_border),
+            ),
+            Divider(),
+            ListTile(
+              title: Text(
+                'ListTitle',
+              ),
+              leading: Icon(Icons.favorite_border),
+            ),
+            Divider(),
+            AboutListTile(
+              icon: Icon(Icons.error),
+              child: Text('关于我们'),
+              applicationIcon: Icon(Icons.more),
+              applicationName: '我们',
+              
+            )
+          ],
+        ),
       ),
     );
   }
