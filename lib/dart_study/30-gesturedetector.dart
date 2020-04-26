@@ -22,6 +22,9 @@ class MyButton extends StatelessWidget {
       onTap: () {
         print('onTap');
       },
+      onDoubleTap: (){
+        print('onDoubleTap');
+      },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
