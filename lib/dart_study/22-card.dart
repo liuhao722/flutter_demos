@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Container(
               child: Image.asset(
-                'assets/images/tzd.jpg',
+                'images/icon_111.jpg',
                 width: double.infinity,
                 height: 150.0,
                 fit: BoxFit.cover,
