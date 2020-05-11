@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Transform(
           transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001)
+            ..setEntry(3, 2, 0.001)   //  3D效果控制器
             ..rotateX(_offset.dy * 0.01)
             ..rotateY(_offset.dx * 0.01)
 //            ..rotateZ(_offset.dx * 0.01)
