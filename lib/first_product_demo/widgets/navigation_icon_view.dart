@@ -17,7 +17,7 @@ class NavigationIconView {
     @required this.iconPath,
     @required this.activeIconPath})
       : item = BottomNavigationBarItem(
-      backgroundColor: Colors.cyanAccent,
+//      backgroundColor: Colors.cyanAccent,
       icon: Image.asset(
         iconPath,
         width: 20.0,

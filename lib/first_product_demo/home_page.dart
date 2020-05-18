@@ -82,6 +82,8 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _currentIndex,
         items: _navigationIconViews.map((view) => view.item).toList(),
         type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.amber,
+        unselectedItemColor: Colors.green,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
