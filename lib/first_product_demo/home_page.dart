@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'constants/constants.dart' show AppColors;
 import 'pages/discovery_page.dart';
 import 'pages/news_list_page.dart';
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: _navigationIconViews.map((view) => view.item).toList(),
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
