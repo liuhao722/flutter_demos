@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'constants/constants.dart' show AppColors;
-import 'pages/discovery_page.dart';
-import 'pages/news_list_page.dart';
-import 'pages/profile_page.dart';
-import 'pages/tweet_page.dart';
-import 'widgets/my_drawer.dart';
-import 'widgets/navigation_icon_view.dart';
+import 'package:first_flutter_demo/second_product_demo/constants/constants.dart' show AppColors;
+import 'package:first_flutter_demo/second_product_demo/pages/discovery_page.dart';
+import 'package:first_flutter_demo/second_product_demo/pages/news_list_page.dart';
+import 'package:first_flutter_demo/second_product_demo/pages/profile_page.dart';
+import 'package:first_flutter_demo/second_product_demo/pages/tweet_page.dart';
+import 'package:first_flutter_demo/second_product_demo/widgets/my_drawer.dart';
+import 'package:first_flutter_demo/second_product_demo/widgets/navigation_icon_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -63,11 +62,6 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(color: Color(AppColors.APPBAR)),
         ),
         iconTheme: IconThemeData(color: Color(AppColors.APPBAR)),
-        leading: Image.asset(
-          'images/icon_111.jpg',
-
-        ),
-
       ),
       body: PageView.builder(
         physics: NeverScrollableScrollPhysics(),
@@ -86,9 +80,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: _navigationIconViews.map((view) => view.item).toList(),
-        type: BottomNavigationBarType.shifting,
-        selectedItemColor: Colors.amber,
-        unselectedItemColor: Colors.green,
+        type: BottomNavigationBarType.fixed,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
